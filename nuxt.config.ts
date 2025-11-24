@@ -5,5 +5,5 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['./app/assets/css/main.css'],
   modules: ['@nuxt/image', '@nuxt/ui', '@nuxt/content'],
-  vite: { plugins: [tailwindcss(),], }
+  vite: { plugins: [tailwindcss(),], },
 })

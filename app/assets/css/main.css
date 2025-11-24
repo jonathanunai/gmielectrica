@@ -1,1 +1,39 @@
 @import "tailwindcss";
+@import "@nuxt/ui";
+
+
+@font-face {
+    font-family: "CentraBold";
+    src: url('../fonts/CentraNo2-Bold.ttf');
+}
+
+@font-face {
+    font-family: "CentraBook";
+    src: url('../fonts/CentraNo2-Book.ttf');
+}
+@font-face {
+    font-family: "CentraBook";
+    src: url('../fonts/CentraNo2-Book.ttf');
+}
+@font-face {
+    font-family: "CentraLight";
+    src: url('../fonts/CentraNo2-Light.ttf');
+}
+@font-face {
+    font-family: "CentraMedium";
+    src: url('../fonts/CentraNo2-Medium.ttf');
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: "MontserratItalic";
+    src: url('../fonts/Montserrat-Italic-VariableFont_wght.ttf');
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'CentraBold', sans-serif;
+}
