@@ -25,7 +25,7 @@ function onSubmit(event: Event) {
     email: state.email,
     acceptPrivacy: state.acceptPrivacy,
   })
-  console.log('result :>> ', result);
+
   if (!result.success) {
     for (const issue of result.issues) {
       console.log('issue :>> ', issue);
@@ -77,7 +77,7 @@ function onSubmit(event: Event) {
       <img
         src="/GM-Colaborativos.png" 
         alt="Logo GMI Eléctricas" 
-        class="h-14 md:h-36 -mb-1"
+        class="h-14 md:h-36 -mb-1 mr-2 md:mr-4"
       />
       <h1 class="text-2xl md:text-6xl font-bold uppercase">En construcción...</h1>
     </div>
@@ -96,18 +96,25 @@ function onSubmit(event: Event) {
         ></video>
       </div>
       <div class="flex-1 mx-12">
-        <p class="text-lg mb-2">¡Regístrate ahora! y te contactaremos</p>
+        <p class="text-lg mb-2">¡Regístrate ahora! y te contactaremos.</p>
         <form class="space-y-4 flex flex-col" action="https://formsubmit.co/me@unai.me" method="POST" @submit="onSubmit">
-          <input v-model="state.name" name="name" placeholder="Nombre" class="border p-1 border-0.5 border-stone-500"/>
-          <input v-model="state.email" name="email" placeholder="Correo electrónico" class="border p-1 border-0.5 border-stone-500"/>
+          <input v-model="state.name" name="name" placeholder="Nombre:" class="border p-1 border-0.5 border-stone-500 focus:outline-none focus:ring-2 "/>
+          <input v-model="state.email" name="email" placeholder="Correo electrónico:" class="border p-1 border-0.5 border-stone-500 focus:outline-none focus:ring-2 "/>
           <span v-if="errors.email" class="text-red-500 text-xs">{{ errors.email }}</span>
-          <textarea v-model="state.message" name="message" placeholder="Mensaje" class="border p-1 border-0.5 border-stone-500"></textarea>
+          <textarea v-model="state.message" name="message" placeholder="Mensaje:" class="border p-1 border-0.5 border-stone-500 focus:outline-none focus:ring-2 "></textarea>
           <label class="flex items-center space-x-2 cursor-pointer text-sm">
-            <input type="checkbox" v-model="state.acceptPrivacy" class="appearance-none w-5 h-5 border border-stone-400 rounded bg-white checked:border-stone-600 checked:bg-stone-600 focus:outline-none focus:ring-2 transition" />
+            <span class="relative">
+              <input type="checkbox" v-model="state.acceptPrivacy" class="appearance-none w-5 h-5 border border-stone-400 rounded bg-white checked:bg-stone-600 focus:outline-none focus:ring-2 transition" />
+              <Icon
+                v-if="state.acceptPrivacy"
+                name="mdi:check"
+                class="absolute left-0 top-0 w-5 h-5 text-white pointer-events-none flex items-center justify-center"
+              />
+            </span>
             <span>He leído y acepto la Política de Privacidad</span>
             <span v-if="errors.acceptPrivacy" class="text-red-500 text-xs ml-2">{{ errors.acceptPrivacy }}</span>
           </label>
-          <div class="flex justify-end mb-4">
+          <div class="flex justify-end mb-24">
             <button class="border p-2 px-6 border-stone-500 bg-stone-950 hover:bg-stone-700 text-stone-50 transition w-fit cursor-pointer" type="submit">
               Enviar
             </button>
