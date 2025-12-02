@@ -97,12 +97,12 @@ function onSubmit(event: Event) {
       </div>
       <div class="flex-1 mx-12">
         <p class="text-lg mb-2">¡Regístrate ahora! y te contactaremos.</p>
-        <form class="space-y-4 flex flex-col" action="https://formsubmit.co/me@unai.me" method="POST" @submit="onSubmit">
+        <form class="space-y-4 flex flex-col" action="https://formsubmit.co/info@gmcolaborativos.com" method="POST" @submit="onSubmit">
           <input v-model="state.name" name="name" placeholder="Nombre:" class="border p-1 border-0.5 border-stone-500 focus:outline-none focus:ring-2 "/>
           <input v-model="state.email" name="email" placeholder="Correo electrónico:" class="border p-1 border-0.5 border-stone-500 focus:outline-none focus:ring-2 "/>
           <span v-if="errors.email" class="text-red-500 text-xs">{{ errors.email }}</span>
           <textarea v-model="state.message" name="message" placeholder="Mensaje:" class="border p-1 border-0.5 border-stone-500 focus:outline-none focus:ring-2 "></textarea>
-          <label class="flex items-center space-x-2 cursor-pointer text-sm">
+          <label class="flex items-center space-x-2 cursor-pointer text-xs">
             <span class="relative">
               <input type="checkbox" v-model="state.acceptPrivacy" class="appearance-none w-5 h-5 border border-stone-400 rounded bg-white checked:bg-stone-600 focus:outline-none focus:ring-2 transition" />
               <Icon
@@ -115,7 +115,7 @@ function onSubmit(event: Event) {
             <span v-if="errors.acceptPrivacy" class="text-red-500 text-xs ml-2">{{ errors.acceptPrivacy }}</span>
           </label>
           <div class="flex justify-end mb-24">
-            <button class="border p-2 px-6 border-stone-500 bg-stone-950 hover:bg-stone-700 text-stone-50 transition w-fit cursor-pointer" type="submit">
+            <button type="submit" class="border p-2 px-6 border-stone-500 bg-stone-950 hover:bg-stone-700 text-stone-50 transition w-fit cursor-pointer">
               Enviar
             </button>
           </div>
