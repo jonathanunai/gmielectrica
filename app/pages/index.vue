@@ -4,18 +4,21 @@ definePageMeta({ layout: 'default' })
 
 <template>
   <!-- Hero -->
-  <section class="relative w-full overflow-hidden bg-stone-200" style="height: clamp(400px, 60vw, 640px);">
-    <!-- Place hero-inicio.jpg in public/ (blueprints/plans image) -->
-    <img
-      src="/hero-inicio.jpg"
-      alt="Planos técnicos"
-      class="w-full h-full object-cover"
-      onerror="this.style.display='none'"
-    />
-    <div class="absolute inset-0 bg-white/20" />
+  <section class="relative w-full overflow-hidden bg-stone-800" style="height: clamp(400px, 60vw, 640px);">
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/EncabezadoPagInicio.webm" type="video/webm" />
+      <source src="/EncabezadoPagInicio.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-black/30" />
     <div class="absolute inset-0 flex items-end pb-16 px-8 md:px-20">
       <h1
-        class="text-3xl md:text-6xl max-w-2xl leading-tight text-stone-800"
+        class="text-3xl md:text-6xl max-w-2xl leading-tight text-white font-semibold"
         style="font-family: 'CentraLight', sans-serif;"
       >
         Tu socio estratégico para tus proyectos más exigentes
@@ -39,6 +42,7 @@ definePageMeta({ layout: 'default' })
         Contamos con una estructura propia que nos permite atender una gran gama de proyectos de manera íntegra,
         sumando las disciplinas de instalaciones eléctricas y de climatización.
       </p>
+      <img src="/logotipos.png" alt="Logotipos de GM Colaborativos" class="w-full max-w-sm object-contain mx-auto" onerror="this.style.display='none'" />
       <p class="text-sm text-stone-600 leading-relaxed" style="font-family: 'Montserrat', sans-serif;">
         Desarrollamos nuestros proyectos con las especificaciones de los mejores clientes del mercado:
         retail, sanitario, hotelería, restauración, industria y sector residencial.

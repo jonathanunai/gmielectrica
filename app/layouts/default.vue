@@ -41,18 +41,20 @@ const navLinks = [
   </Transition>
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-4">
+  <header class="flex items-center justify-between px-6 py-1">
     <button class="flex flex-col gap-1.5 cursor-pointer" @click="menuOpen = true">
       <span class="w-6 h-0.5 bg-black block" />
       <span class="w-6 h-0.5 bg-black block" />
       <span class="w-6 h-0.5 bg-black block" />
     </button>
 
-    <img src="/GM-Colaborativos.png" alt="GM Colaborativos" class="h-12" />
+    <NuxtLink to="/">
+      <img src="/GM-Colaborativos.png" alt="GM Colaborativos" class="h-16 scale-150" />
+    </NuxtLink>
 
     <NuxtLink
       to="/unete"
-      class="text-xs font-bold uppercase tracking-wide text-center border border-black px-3 py-2 leading-tight hover:bg-black hover:text-white transition"
+      class="text-xs font-bold uppercase md:tracking-wide text-center border border-black px-3 py-2 leading-[11px] md:leading-tight hover:bg-black hover:text-white transition"
       style="font-family: 'CentraBold', sans-serif;"
     >
       Únete a<br>nuestro equipo!
@@ -67,8 +69,8 @@ const navLinks = [
     <div class="flex flex-col gap-2 text-sm text-gray-700" style="font-family: 'Montserrat', sans-serif;">
       <a href="/contacto" class="hover:underline">Contacto</a>
       <a href="mailto:info@gmcolaborativos.com" class="hover:underline">Correo electrónico &#9658;</a>
-      <a href="tel:+34000000000" class="hover:underline">Número telefónico &#9658;</a>
-      <a href="/dossier.pdf" target="_blank" class="hover:underline">Descarga Dossier &#9658;</a>
+      <a href="tel:+34918663415" class="hover:underline">Número telefónico &#9658;</a>
+      <a href="/Dossier-GMcolaborativos_2026.pdf" target="_blank" class="hover:underline">Descarga Dossier &#9658;</a>
       <a href="https://www.linkedin.com/company/gm-colaborativos" target="_blank" class="mt-2 inline-flex">
         <span class="flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-100 transition text-xs font-bold">in</span>
       </a>
