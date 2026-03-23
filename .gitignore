@@ -24,3 +24,6 @@ logs
 !.env.example
 
 webgm
+
+# Original source videos (replaced by compressed mp4/webm)
+public/*.mov
