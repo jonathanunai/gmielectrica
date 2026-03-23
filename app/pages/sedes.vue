@@ -19,7 +19,7 @@
 
     <!-- Values + Spain map -->
     <div class="relative w-full max-w-3xl flex flex-col items-center">
-      <img src="/sedes.png" alt="Mapa de sedes de GM Colaborativos" class="w-full h-auto object-contain" onerror="this.style.display='none'" />
+      <img src="/Sedes.png" alt="Mapa de sedes de GM Colaborativos" class="w-full h-auto object-contain" onerror="this.style.display='none'" />
       <!-- City list -->
       <div class="mt-10 flex flex-wrap justify-center gap-4 text-xs text-stone-500 uppercase tracking-widest" style="font-family: 'Montserrat', sans-serif;">
         <span>Alicante</span>
