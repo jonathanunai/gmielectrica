@@ -70,7 +70,6 @@ const navLinks = [
       <a href="/contacto" class="hover:underline">Contacto</a>
       <a href="mailto:info@gmcolaborativos.com" class="hover:underline">Correo electrónico &#9658;</a>
       <a href="tel:+34918663415" class="hover:underline">Número telefónico &#9658;</a>
-      <a href="/Dossier-GMcolaborativos_2026.pdf" target="_blank" class="hover:underline">Descarga Dossier &#9658;</a>
       <a href="https://www.linkedin.com/company/gm-colaborativos" target="_blank" class="mt-2 inline-flex">
         <span class="flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-100 transition text-xs font-bold">in</span>
       </a>
