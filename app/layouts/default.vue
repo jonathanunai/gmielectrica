@@ -24,7 +24,7 @@ const navLinks = [
   <Transition name="slide">
     <div
       v-if="menuOpen"
-      class="fixed top-0 left-0 z-50 h-full w-52 bg-white flex flex-col p-8 shadow-lg"
+      class="fixed top-0 right-0 z-50 h-full w-64 bg-white flex flex-col p-8 shadow-lg"
     >
       <button class="self-end mb-8 text-xl text-gray-500 hover:text-black" @click="menuOpen = false">✕</button>
       <nav class="flex flex-col gap-6">
@@ -32,7 +32,7 @@ const navLinks = [
           v-for="link in navLinks"
           :key="link.name"
           :to="link.href"
-          class="text-base text-gray-800 hover:text-gray-500 transition"
+          class="text-base text-gray-800 hover:text-gray-500 font-semibold transition"
           style="font-family: 'Montserrat', sans-serif;"
           @click="menuOpen = false"
         >{{ link.name }}</NuxtLink>
@@ -46,12 +46,12 @@ const navLinks = [
     <NuxtLink to="/" >
       <img src="/logo-GM.png" alt="GM Colaborativos" class="h-20 p-2" />
     </NuxtLink>
-    <div class=" gap-4 hidden lg:flex">
+    <div class=" gap-6 xl:gap-10 hidden lg:flex">
       <NuxtLink
           v-for="link in navLinks"
           :key="link.name"
           :to="link.href"
-          class="text-base text-gray-800 hover:text-gray-500 transition"
+          class="text-base font-semibold text-gray-800 hover:text-gray-500 transition"
           style="font-family: 'Montserrat', sans-serif;"
           @click="menuOpen = false"
         >{{ link.name }}</NuxtLink>
@@ -113,6 +113,6 @@ const navLinks = [
 }
 .slide-enter-from,
 .slide-leave-to {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 </style>
