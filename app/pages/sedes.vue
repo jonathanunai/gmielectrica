@@ -14,7 +14,7 @@
       class="text-xl md:text-2xl text-center text-stone-700"
       style="font-family: 'CentraLight', sans-serif;"
     >
-      Sedes propias Alicante, Barcelona, Madrid, Málaga y Sevilla.
+      Sedes propias en Barcelona, Madrid, Málaga y Sevilla.
     </p>
 
     <!-- Values + Spain map -->
@@ -22,8 +22,6 @@
       <img src="/Sedes.png" alt="Mapa de sedes de GM Colaborativos" class="w-full h-auto object-contain" onerror="this.style.display='none'" />
       <!-- City list -->
       <div class="mt-10 flex flex-wrap justify-center gap-4 text-xs text-stone-500 uppercase tracking-widest" style="font-family: 'Montserrat', sans-serif;">
-        <span>Alicante</span>
-        <span>·</span>
         <span>Barcelona</span>
         <span>·</span>
         <span>Madrid</span>

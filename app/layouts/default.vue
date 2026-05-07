@@ -2,10 +2,10 @@
 const menuOpen = ref(false)
 
 const navLinks = [
-  { name: 'Sedes', href: '/sedes' },
   { name: 'Instalaciones', href: '/instalaciones' },
   { name: 'Proyectos', href: '/proyectos' },
   { name: 'Equipo', href: '/equipo' },
+  { name: 'Sedes', href: '/sedes' },
   { name: 'Contacto', href: '/contacto' },
 ]
 </script>
@@ -41,24 +41,39 @@ const navLinks = [
   </Transition>
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-1">
-    <button class="flex flex-col gap-1.5 cursor-pointer" @click="menuOpen = true">
-      <span class="w-6 h-0.5 bg-black block" />
-      <span class="w-6 h-0.5 bg-black block" />
-      <span class="w-6 h-0.5 bg-black block" />
-    </button>
+  <header class="flex items-center justify-between px-6 py-1 ">
 
-    <NuxtLink to="/">
-      <img src="/GM-Colaborativos.png" alt="GM Colaborativos" class="h-16 scale-150" />
+    <NuxtLink to="/" >
+      <img src="/logo-GM.png" alt="GM Colaborativos" class="h-20" />
     </NuxtLink>
+    <div class=" gap-4 hidden lg:flex">
+      <NuxtLink
+          v-for="link in navLinks"
+          :key="link.name"
+          :to="link.href"
+          class="text-base text-gray-800 hover:text-gray-500 transition"
+          style="font-family: 'Montserrat', sans-serif;"
+          @click="menuOpen = false"
+        >{{ link.name }}</NuxtLink>
 
-    <NuxtLink
+    </div>
+    <div class="flex items-center gap-4">
+        <NuxtLink
       to="/unete"
       class="text-xs font-bold uppercase md:tracking-wide text-center border border-black px-3 py-2 leading-[11px] md:leading-tight hover:bg-black hover:text-white transition"
       style="font-family: 'CentraBold', sans-serif;"
     >
       Únete a<br>nuestro equipo!
     </NuxtLink>
+
+    <button class="flex flex-col gap-1.5 cursor-pointer lg:hidden" @click="menuOpen = true" >
+      <span class="w-6 h-0.5 bg-black block" />
+      <span class="w-6 h-0.5 bg-black block" />
+      <span class="w-6 h-0.5 bg-black block" />
+    </button>
+
+    </div>
+
   </header>
 
   <!-- Page content -->
