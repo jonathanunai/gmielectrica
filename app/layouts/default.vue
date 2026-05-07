@@ -15,7 +15,7 @@ const navLinks = [
   <Transition name="fade">
     <div
       v-if="menuOpen"
-      class="fixed inset-0 z-40 bg-black/40"
+      class="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
       @click="menuOpen = false"
     />
   </Transition>
@@ -24,56 +24,91 @@ const navLinks = [
   <Transition name="slide">
     <div
       v-if="menuOpen"
-      class="fixed top-0 right-0 z-50 h-full w-64 bg-white flex flex-col p-8 shadow-lg"
+      class="fixed top-0 right-0 z-50 h-full w-80 bg-zinc-900 flex flex-col shadow-2xl"
     >
-      <button class="self-end mb-8 text-xl text-gray-500 hover:text-black" @click="menuOpen = false">✕</button>
-      <nav class="flex flex-col gap-6">
+      <!-- Close button -->
+      <div class="flex justify-end px-8 pt-8 pb-4">
+        <button
+          class="group relative w-8 h-8 flex items-center justify-center"
+          @click="menuOpen = false"
+          aria-label="Cerrar menú"
+        >
+          <span class="absolute w-5 h-px bg-zinc-400 group-hover:bg-white transition-colors duration-200 rotate-45" />
+          <span class="absolute w-5 h-px bg-zinc-400 group-hover:bg-white transition-colors duration-200 -rotate-45" />
+        </button>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="flex flex-col px-10 pt-6 gap-0 flex-1">
         <NuxtLink
-          v-for="link in navLinks"
+          v-for="(link, i) in navLinks"
           :key="link.name"
           :to="link.href"
-          class="text-base text-gray-800 hover:text-gray-500 font-semibold transition"
-          style="font-family: 'Montserrat', sans-serif;"
+          class="nav-link group flex items-baseline gap-4 py-5 border-b border-zinc-800 last:border-0"
+          :style="`animation-delay: ${i * 120}ms`"
           @click="menuOpen = false"
-        >{{ link.name }}</NuxtLink>
+        >
+          <span class="text-xs text-zinc-600 font-mono w-5 shrink-0 group-hover:text-zinc-400 transition-colors duration-200">
+            {{ String(i + 1).padStart(2, '0') }}
+          </span>
+          <span
+            class="text-2xl text-zinc-100 font-semibold tracking-tight group-hover:text-white transition-colors duration-200"
+            style="font-family: 'Montserrat', sans-serif;"
+          >{{ link.name }}</span>
+        </NuxtLink>
       </nav>
+
+      <!-- Drawer footer -->
+      <div class="px-10 py-8 border-t border-zinc-800">
+        <a
+          href="mailto:info@gmcolaborativos.com"
+          class="text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200 block mb-3"
+          style="font-family: 'Montserrat', sans-serif;"
+        >info@gmcolaborativos.com</a>
+        <a
+          href="https://www.linkedin.com/company/gm-colaborativos"
+          target="_blank"
+          class="inline-flex items-center justify-center w-7 h-7 rounded-full border border-zinc-700 text-zinc-500 hover:border-zinc-400 hover:text-zinc-300 transition-colors duration-200 text-xs font-bold"
+        >in</a>
+      </div>
     </div>
   </Transition>
 
   <!-- Header -->
-  <header class="flex items-center justify-between px-6 py-1 ">
-
-    <NuxtLink to="/" >
+  <header class="flex items-center justify-between px-6 py-1">
+    <NuxtLink to="/">
       <img src="/logo-GM.png" alt="GM Colaborativos" class="h-20 p-2" />
     </NuxtLink>
-    <div class=" gap-6 xl:gap-10 hidden lg:flex">
+    <div class="gap-6 xl:gap-10 hidden lg:flex">
       <NuxtLink
-          v-for="link in navLinks"
-          :key="link.name"
-          :to="link.href"
-          class="text-base font-semibold text-gray-800 hover:text-gray-500 transition"
-          style="font-family: 'Montserrat', sans-serif;"
-          @click="menuOpen = false"
-        >{{ link.name }}</NuxtLink>
-
+        v-for="link in navLinks"
+        :key="link.name"
+        :to="link.href"
+        class="text-base font-semibold text-gray-800 hover:text-gray-500 transition"
+        style="font-family: 'Montserrat', sans-serif;"
+      >{{ link.name }}</NuxtLink>
     </div>
     <div class="flex items-center gap-4">
-        <NuxtLink
-      to="/unete"
-      class="text-xs font-bold uppercase md:tracking-wide text-center border border-black px-3 py-2 leading-[11px] md:leading-tight hover:bg-black hover:text-white transition"
-      style="font-family: 'CentraBold', sans-serif;"
-    >
-      Únete a<br>nuestro equipo!
-    </NuxtLink>
+      <NuxtLink
+        to="/unete"
+        class="text-xs font-bold uppercase md:tracking-wide text-center border border-black px-3 py-2 leading-[11px] md:leading-tight hover:bg-black hover:text-white transition"
+        style="font-family: 'CentraBold', sans-serif;"
+      >
+        Únete a<br>nuestro equipo!
+      </NuxtLink>
 
-    <button class="flex flex-col gap-1.5 cursor-pointer lg:hidden" @click="menuOpen = true" >
-      <span class="w-6 h-0.5 bg-black block" />
-      <span class="w-6 h-0.5 bg-black block" />
-      <span class="w-6 h-0.5 bg-black block" />
-    </button>
-
+      <!-- Hamburger — morphs to X when open -->
+      <button
+        class="cursor-pointer lg:hidden w-6 h-5 relative"
+        :class="{ 'is-open': menuOpen }"
+        @click="menuOpen = !menuOpen"
+        aria-label="Abrir menú"
+      >
+        <span class="hamburger-bar" />
+        <span class="hamburger-bar" />
+        <span class="hamburger-bar" />
+      </button>
     </div>
-
   </header>
 
   <!-- Page content -->
@@ -100,7 +135,7 @@ const navLinks = [
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.3s;
+  transition: opacity 0.35s ease;
 }
 .fade-enter-from,
 .fade-leave-to {
@@ -109,10 +144,51 @@ const navLinks = [
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.76, 0, 0.24, 1);
 }
 .slide-enter-from,
 .slide-leave-to {
   transform: translateX(100%);
+}
+
+/* Staggered nav link reveal */
+.nav-link {
+  animation: linkFadeIn 0.4s ease both;
+}
+@keyframes linkFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Morphing hamburger */
+.hamburger-bar {
+  display: block;
+  width: 1.5rem;
+  height: 1.5px;
+  background: black;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform-origin: center;
+  position: absolute;
+  left: 0;
+}
+.hamburger-bar:nth-child(1) { top: 0; }
+.hamburger-bar:nth-child(2) { top: 50%; margin-top: -0.75px; }
+.hamburger-bar:nth-child(3) { bottom: 0; }
+
+.is-open .hamburger-bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.is-open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.is-open .hamburger-bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
 }
 </style>
