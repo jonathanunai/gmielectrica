@@ -91,7 +91,7 @@ const navLinks = [
     <div class="flex items-center gap-4">
       <NuxtLink
         to="/unete"
-        class="text-xs font-bold uppercase md:tracking-wide text-center border border-black px-3 py-2 leading-[11px] md:leading-tight hover:bg-black hover:text-white transition"
+        class="text-xs font-bold uppercase md:tracking-wide text-center border border-black px-2 md:px-3 py-1.5 md:py-2 leading-[11px] md:leading-tight hover:bg-black hover:text-white transition"
         style="font-family: 'CentraBold', sans-serif;"
       >
         Únete a<br>nuestro equipo!
