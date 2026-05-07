@@ -44,7 +44,7 @@ const navLinks = [
   <header class="flex items-center justify-between px-6 py-1 ">
 
     <NuxtLink to="/" >
-      <img src="/logo-GM.png" alt="GM Colaborativos" class="h-20" />
+      <img src="/logo-GM.png" alt="GM Colaborativos" class="h-20 p-2" />
     </NuxtLink>
     <div class=" gap-4 hidden lg:flex">
       <NuxtLink
