@@ -124,8 +124,8 @@ const navLinks = [
         <span class="flex items-center justify-center w-8 h-8 rounded-full border border-gray-400 text-gray-600 hover:bg-gray-100 transition text-xs font-bold">in</span>
       </a>
     </div>
-    <p class="text-xs text-gray-400 self-end" style="font-family: 'Montserrat', sans-serif;">
-      © GM Colaborativos &nbsp;|&nbsp; Aviso legal &nbsp;|&nbsp;
+    <p class="text-xs text-gray-500 self-end" style="font-family: 'Montserrat', sans-serif;">
+      © GM Colaborativos &nbsp;|&nbsp; <a href="/aviso-legal" class="hover:underline">Aviso legal</a> &nbsp;|&nbsp;
       <a href="/privacidad" class="hover:underline">Política de privacidad</a> &nbsp;|&nbsp;
       <a href="/cookies" class="hover:underline">Política de cookies</a>
     </p>
