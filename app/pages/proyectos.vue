@@ -77,8 +77,16 @@ onUnmounted(() => clearInterval(timer))
   </section>
 
   <!-- Clients -->
-  <section class="py-16 px-0 md:px-20 bg-white">
-    <img src="/logos-referencias.png" alt="Logos de referencias de GM Colaborativos" class="w-full max-w-7xl object-contain mx-auto mb-10" onerror="this.style.display='none'" />
+  <section class="py-12 px-6 md:px-20 bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
+      <img
+        v-for="n in 50"
+        :key="n"
+        :src="`/logos-marcas/LOGOS-${String(n).padStart(2, '0')}.png`"
+        :alt="`Cliente ${n}`"
+        class="w-full h-20 md:h-24 object-contain grayscale hover:grayscale-0 transition-all duration-300 scale-150"
+      />
+    </div>
   </section>
 </template>
 
