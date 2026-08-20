@@ -1,6 +1,11 @@
 <script setup lang="ts">
 definePageMeta({ layout: false })
 
+useSeoMeta({
+  title: 'En construcción',
+  robots: 'noindex, nofollow',
+})
+
 import * as v from 'valibot'
 const schema = v.object({
   email: v.pipe(v.string(), v.email('Correo inválido')),
@@ -59,7 +64,7 @@ function onSubmit(event: Event) {
   <UApp>
     <div class="min-h-screen flex flex-col items-center justify-center max-w-6xl mx-auto p-6">
       <div class="flex flex-row items-center">
-        <img src="/GM-Colaborativos.png" alt="Logo GMI Eléctricas" class="h-14 md:h-36 -mb-1 mr-2 md:mr-4" />
+        <NuxtImg src="/GM-Colaborativos.png" alt="Logo de GM Colaborativos" width="800" height="800" sizes="144px" format="webp" class="h-14 md:h-36 w-auto -mb-1 mr-2 md:mr-4" />
         <h1 class="text-2xl md:text-6xl font-bold uppercase">En construcción...</h1>
       </div>
 

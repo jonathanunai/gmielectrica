@@ -1,3 +1,10 @@
+<script setup lang="ts">
+usePageSeo({
+  title: 'Aviso legal',
+  description: 'Aviso legal de gmcolaborativos.com, titularidad de Lumínica Electricidad, S.L., conforme al artículo 10 de la Ley 34/2002 (LSSI-CE).',
+})
+</script>
+
 <template>
   <main class="max-w-3xl mx-auto px-6 py-16" style="font-family: 'Montserrat', sans-serif;">
     <h1 class="text-3xl font-bold uppercase tracking-tight mb-10">Aviso Legal</h1>
@@ -13,7 +20,7 @@
       <p>CIF: B88283783</p>
       <p>Domicilio social: Calle Loeches 62, E Nave 31, 28925 Alcorcón (Madrid)</p>
       <p>Correo electrónico: <a href="mailto:info@gmcolaborativos.com" class="underline hover:text-gray-500">info@gmcolaborativos.com</a></p>
-      <p>Página web: <a href="https://www.gmcolaborativos.com" class="underline hover:text-gray-500">www.gmcolaborativos.com</a></p>
+      <p>Página web: <a href="https://gmcolaborativos.com" class="underline hover:text-gray-500">gmcolaborativos.com</a></p>
     </div>
 
     <p class="text-sm text-gray-700 leading-relaxed mb-10">
@@ -56,7 +63,7 @@
       <h2 class="text-base font-bold uppercase tracking-widest mb-4">Uso del portal</h2>
       <div class="flex flex-col gap-4 text-sm text-gray-700 leading-relaxed">
         <p>
-          www.gmcolaborativos.com proporciona acceso a información, servicios, contenidos y datos relacionados
+          gmcolaborativos.com proporciona acceso a información, servicios, contenidos y datos relacionados
           con las actividades desarrolladas por LUMÍNICA ELECTRICIDAD, S.L.
         </p>
         <p>
@@ -71,7 +78,7 @@
           Así mismo, si el usuario participa en chats, foros, blogs o comentarios de noticias, se compromete a
           no manifestar comentarios que vulneren la dignidad de las personas, por entenderse éstos
           discriminatorios, vejatorios, racistas, xenófobos, pornográficos, etc. Y en consecuencia serán
-          retirados a discreción del titular de este portal. No siendo en ningún caso www.gmcolaborativos.com
+          retirados a discreción del titular de este portal. No siendo en ningún caso gmcolaborativos.com
           (LUMINICA ELECTRICIDAD) responsable de las opiniones emitidas por los usuarios en esta web. Quedando
           igualmente prohibida la introducción o difusión de virus informáticos o cualquier otro sistema físico
           o lógico susceptibles de provocar daños al portal.

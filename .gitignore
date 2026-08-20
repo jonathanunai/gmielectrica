@@ -27,3 +27,6 @@ webgm
 
 # Original source videos (replaced by compressed mp4/webm)
 public/*.mov
+
+# Source/archive media kept out of the deployed bundle (not referenced by any page)
+/media-source

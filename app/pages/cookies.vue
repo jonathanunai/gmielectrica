@@ -1,9 +1,16 @@
+<script setup lang="ts">
+usePageSeo({
+  title: 'Política de cookies',
+  description: 'Información sobre las cookies propias y de terceros que utiliza gmcolaborativos.com y cómo configurarlas o desactivarlas.',
+})
+</script>
+
 <template>
   <main class="max-w-3xl mx-auto px-6 py-16" style="font-family: 'Montserrat', sans-serif;">
     <h1 class="text-3xl font-bold uppercase tracking-tight mb-10">Política de Cookies</h1>
 
     <p class="text-sm text-gray-700 leading-relaxed mb-4">
-      La presente página web <span class="font-medium">www.gmcolaborativos.com</span> utiliza cookies propias y
+      La presente página web <span class="font-medium">gmcolaborativos.com</span> utiliza cookies propias y
       de terceros con la finalidad de garantizar el correcto funcionamiento del sitio web, mejorar la experiencia
       del usuario y analizar hábitos de navegación.
     </p>
@@ -122,7 +129,7 @@
         <p>Calle Loeches 62, E Nave 31</p>
         <p>28925 Alcorcón (Madrid)</p>
         <p>Correo electrónico: <a href="mailto:info@gmcolaborativos.com" class="underline hover:text-gray-500">info@gmcolaborativos.com</a></p>
-        <p>Página web: <a href="https://www.gmcolaborativos.com" class="underline hover:text-gray-500">www.gmcolaborativos.com</a></p>
+        <p>Página web: <a href="https://gmcolaborativos.com" class="underline hover:text-gray-500">gmcolaborativos.com</a></p>
       </div>
     </section>
 

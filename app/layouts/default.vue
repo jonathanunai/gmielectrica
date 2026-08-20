@@ -8,6 +8,46 @@ const navLinks = [
   { name: 'Sedes', href: '/sedes' },
   { name: 'Contacto', href: '/contacto' },
 ]
+
+// Organization / LocalBusiness structured data, emitted on every page that
+// uses this layout so search engines can build a knowledge panel.
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ElectricalContractor',
+  '@id': 'https://gmcolaborativos.com/#organization',
+  name: 'GM Colaborativos',
+  legalName: 'LUMÍNICA ELECTRICIDAD, S.L.',
+  vatID: 'B88283783',
+  url: 'https://gmcolaborativos.com',
+  logo: 'https://gmcolaborativos.com/GM-Colaborativos.png',
+  image: 'https://gmcolaborativos.com/og-image.jpg',
+  email: 'info@gmcolaborativos.com',
+  telephone: '+34918663415',
+  description:
+    'Empresa de instalaciones eléctricas y de climatización con más de 20 años de experiencia en proyectos de alta exigencia para clientes nacionales e internacionales.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Calle Loeches 62, E Nave 31',
+    postalCode: '28925',
+    addressLocality: 'Alcorcón',
+    addressRegion: 'Madrid',
+    addressCountry: 'ES',
+  },
+  areaServed: ['Barcelona', 'Madrid', 'Málaga', 'Sevilla'].map(name => ({
+    '@type': 'City',
+    name,
+  })),
+  sameAs: ['https://www.linkedin.com/company/gm-colaborativos'],
+}
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(organizationSchema),
+    },
+  ],
+})
 </script>
 
 <template>
@@ -77,7 +117,7 @@ const navLinks = [
   <!-- Header -->
   <header class="flex items-center justify-between px-6 py-1">
     <NuxtLink to="/">
-      <img src="/logo-GM.png" alt="GM Colaborativos" class="h-20 p-2" />
+      <NuxtImg src="/logo-GM.png" alt="GM Colaborativos" width="222" height="146" format="webp" preload class="h-20 p-2 w-auto" />
     </NuxtLink>
     <div class="gap-6 xl:gap-10 hidden lg:flex">
       <NuxtLink

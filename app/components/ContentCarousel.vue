@@ -30,14 +30,16 @@ onUnmounted(() => clearInterval(timer))
   <section class="flex flex-col md:flex-row pt-10 mx-auto max-w-7xl shadow-lg" style="height: clamp(340px, 45vw, 520px);">
     <!-- Image (left) -->
     <div class="relative flex-1 bg-stone-200 overflow-hidden">
-      <img
+      <NuxtImg
         v-for="(slide, i) in slides"
         :key="i"
         :src="slide.img"
         :alt="slide.alt ?? ''"
+        sizes="xs:100vw sm:100vw md:640px lg:640px xl:640px xxl:640px"
+        format="webp"
+        :loading="i === 0 ? 'eager' : 'lazy'"
         class="w-full h-full object-cover absolute inset-0 transition-opacity duration-500"
         :class="i === current ? 'opacity-100' : 'opacity-0'"
-        onerror="this.style.display='none'"
       />
       <button
         class="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/70 flex items-center justify-center hover:bg-white transition"

@@ -1,4 +1,10 @@
 <script setup lang="ts">
+usePageSeo({
+  title: 'Instalaciones eléctricas, climatización y especiales',
+  description: 'Ejecutamos instalaciones eléctricas, de climatización e instalaciones especiales con estructura propia, cumpliendo normativa y los más altos estándares de calidad.',
+  image: '/og-instalaciones.jpg',
+})
+
 const services = [
   {
     title: 'Instalaciones Eléctricas',
@@ -25,9 +31,11 @@ const slides = services.map(s => ({ img: s.img, alt: s.title }))
 </script>
 
 <template>
+  <h1 class="sr-only">Instalaciones</h1>
+
   <!-- Hero -->
   <section class="relative w-full overflow-hidden bg-stone-700" style="height: clamp(320px, 55vw, 560px);">
-    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+    <video autoplay loop muted playsinline poster="/poster-instalacionesPag3.jpg" class="absolute inset-0 w-full h-full object-cover">
       <source src="/instalacionesPag3.webm" type="video/webm" />
       <source src="/instalacionesPag3.mp4" type="video/mp4" />
     </video>

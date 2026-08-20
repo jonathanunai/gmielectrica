@@ -1,4 +1,10 @@
 <script setup lang="ts">
+usePageSeo({
+  title: 'Contacto',
+  description: '¿Tienes un proyecto de instalaciones eléctricas o de climatización? Contacta con GM Colaborativos y te ayudamos a convertirlo en una solución eficiente y segura.',
+  image: '/og-contacto.jpg',
+})
+
 const state = reactive({
   name: '',
   email: '',
@@ -32,10 +38,12 @@ async function onSubmit(e: Event) {
 </script>
 
 <template>
+  <h1 class="sr-only">Contacto</h1>
+
   <!-- Hero -->
   <!-- Place hero-contacto.jpg in public/ (video call / meeting scene) -->
   <section class="relative w-full overflow-hidden bg-stone-700" style="height: clamp(280px, 48vw, 500px);">
-    <img src="/hero-contacto.jpg" alt="Contacto" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none'" />
+    <NuxtImg src="/hero-contacto.jpg" alt="Equipo de GM Colaborativos en una reunión de proyecto" width="2000" height="802" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw" format="webp" preload class="w-full h-full object-cover opacity-80" />
     <div class="absolute inset-0 bg-black/30" />
   </section>
 

@@ -1,4 +1,10 @@
 <script setup lang="ts">
+usePageSeo({
+  title: 'Únete al equipo',
+  description: 'Trabaja con nosotros. Buscamos profesionales de instalaciones eléctricas y climatización que quieran crecer en proyectos de alta exigencia.',
+  image: '/og-unete.jpg',
+})
+
 const state = reactive({
   name: '',
   email: '',
@@ -50,7 +56,7 @@ async function onSubmit(e: Event) {
   <!-- Full-width team photo -->
   <!-- Place hero-unete.jpg in public/ (overhead view of team around a table) -->
   <section class="w-full overflow-hidden bg-stone-200" style="height: clamp(260px, 45vw, 480px);">
-    <img src="/hero-unete.jpg" alt="Únete al equipo" class="w-full h-full object-cover" onerror="this.style.display='none'" />
+    <NuxtImg src="/hero-unete.jpg" alt="Profesionales de GM Colaborativos en su puesto de trabajo" width="2400" height="1064" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw" format="webp" preload class="w-full h-full object-cover" />
   </section>
 
   <!-- Form -->

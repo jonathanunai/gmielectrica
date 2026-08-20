@@ -1,3 +1,10 @@
+<script setup lang="ts">
+usePageSeo({
+  title: 'Política de privacidad',
+  description: 'Información sobre el tratamiento de datos personales en gmcolaborativos.com conforme al RGPD y a la LOPDGDD.',
+})
+</script>
+
 <template>
   <main class="max-w-3xl mx-auto px-6 py-16" style="font-family: 'Montserrat', sans-serif;">
     <h1 class="text-3xl font-bold uppercase tracking-tight mb-10">Política de Privacidad</h1>

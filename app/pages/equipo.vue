@@ -1,4 +1,10 @@
 <script setup lang="ts">
+usePageSeo({
+  title: 'Nuestro equipo: ingeniería, obra y administración',
+  description: 'Un equipo de ingeniería, obra y administración altamente cualificado que lleva cada proyecto del plano a la realidad con rigor, eficiencia y seguridad.',
+  image: '/og-equipo.jpg',
+})
+
 const departments = [
   {
     name: 'Departamento Ingeniería',
@@ -21,9 +27,11 @@ const slides = departments.map(d => ({ img: d.img, alt: d.name }))
 </script>
 
 <template>
+  <h1 class="sr-only">Nuestro equipo</h1>
+
   <!-- Hero -->
   <section class="relative w-full overflow-hidden bg-stone-600" style="height: clamp(320px, 55vw, 560px);">
-    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+    <video autoplay loop muted playsinline poster="/poster-encabezado-equipo.jpg" class="absolute inset-0 w-full h-full object-cover">
       <source src="/encabezado-equipo.webm" type="video/webm" />
       <source src="/encabezado-equipo.mp4" type="video/mp4" />
     </video>

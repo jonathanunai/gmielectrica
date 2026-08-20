@@ -1,4 +1,10 @@
 <script setup lang="ts">
+usePageSeo({
+  title: 'Proyectos: retail, sanitario, oficinas, industrial y residencial',
+  description: 'Proyectos de instalaciones ejecutados para los mejores clientes del mercado en retail, sanitario, hotelería, restauración, oficinas, industria y sector residencial.',
+  image: '/og-proyectos.jpg',
+})
+
 const sectors = [
   { name: 'RETAIL', img: '/retail.jpg', title: 'Tienda DIOR, Madrid' },
   { name: 'SANITARIO', img: '/sanitario.jpg', title: 'Proyecto Sanitario' },
@@ -33,12 +39,15 @@ onUnmounted(() => clearInterval(timer))
   <section class="relative w-full overflow-hidden" style="height: clamp(300px, 55vw, 540px);">
     <!-- Slides -->
     <transition-group name="fade">
-      <img
+      <NuxtImg
         v-for="(sector, i) in sectors"
         v-show="i === current"
         :key="sector.name"
         :src="sector.img"
-        :alt="sector.name"
+        :alt="`Proyecto de instalaciones en el sector ${sector.name.toLowerCase()}`"
+        sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:100vw"
+        format="webp"
+        :loading="i === 0 ? 'eager' : 'lazy'"
         class="absolute inset-0 w-full h-full object-cover"
       />
     </transition-group>
@@ -79,11 +88,16 @@ onUnmounted(() => clearInterval(timer))
   <!-- Clients -->
   <section class="py-12 px-6 md:px-20 bg-white">
     <div class="max-w-7xl mx-auto grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8">
-      <img
+      <NuxtImg
         v-for="n in 50"
         :key="n"
         :src="`/logos-marcas/LOGOS-${String(n).padStart(2, '0')}.png`"
-        :alt="`Cliente ${n}`"
+        :alt="`Logotipo de cliente de GM Colaborativos`"
+        width="400"
+        height="400"
+        sizes="150px"
+        format="webp"
+        loading="lazy"
         class="w-full h-20 md:h-24 object-contain grayscale hover:grayscale-0 transition-all duration-300 scale-150"
       />
     </div>
